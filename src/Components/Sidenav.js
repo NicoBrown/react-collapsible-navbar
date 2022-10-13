@@ -60,7 +60,7 @@ export default function Sidenav() {
       {navData.map((item) => {
         return (
           <div>
-            {item.id == 3 && (
+            {item.id === 3 && (
               <hr
                 style={{
                   color: "white",
