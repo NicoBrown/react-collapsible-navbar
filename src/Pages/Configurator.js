@@ -3,10 +3,10 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 export default function Configurator() {
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl: "/build/Newfolder.loader.js",
-    dataUrl: "/build/webgl.data",
-    frameworkUrl: "/build/build.framework.js",
-    codeUrl: "/build/build.wasm",
+    loaderUrl: "/build/configurator/Build2.loader.js",
+    dataUrl: "/build/configurator/webglconfig.data",
+    frameworkUrl: "/build/configurator/Build2.framework.js",
+    codeUrl: "/build/configurator/Build2.wasm",
   });
   // We'll round the loading progression to a whole number to represent the
   // percentage of the Unity Application that has loaded.
@@ -21,7 +21,11 @@ export default function Configurator() {
           <p>Loading... ({loadingPercentage}%)</p>
         </div>
       )}
-      <Unity className="unity" unityProvider={unityProvider} />
+      <Unity
+        className="unity"
+        style={{ height: window.innerHeight, width: window.innerWidth - 100 }}
+        unityProvider={unityProvider}
+      />
     </div>
   );
 }
